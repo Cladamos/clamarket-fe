@@ -1,10 +1,24 @@
 import { Button } from "@mantine/core"
+import { Header } from "./components/Header"
+import { Route, Routes } from "react-router"
 
 export function App() {
   return (
-    <div className="flex flex-col justify-center items-center py-20">
-      <p className="text-3xl">clamarket</p>
-      <Button>Button</Button>
-    </div>
+    <Header>
+      <Routes>
+        <Route
+          index
+          element={
+            <div className="flex flex-col justify-center items-center py-10">
+              <p className="text-3xl">clamarket</p>
+              <Button>Button</Button>
+            </div>
+          }
+        />
+        <Route path="/catalog" element={<p>Catalog</p>} />
+        <Route path="/collections" element={<p>Collections</p>} />
+        <Route path="/about" element={<p>About</p>} />
+      </Routes>
+    </Header>
   )
 }
