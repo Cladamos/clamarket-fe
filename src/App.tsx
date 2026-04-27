@@ -1,6 +1,7 @@
 import { Button } from "@mantine/core"
 import { Header } from "./components/Header"
 import { Route, Routes } from "react-router"
+import { Catalog } from "./components/Catalog"
 
 export function App() {
   return (
@@ -15,7 +16,7 @@ export function App() {
             </div>
           }
         />
-        <Route path="/catalog" element={<p>Catalog</p>} />
+        <Route path="/catalog" element={<Catalog />} />
         <Route path="/collections" element={<p>Collections</p>} />
         <Route path="/about" element={<p>About</p>} />
       </Routes>
