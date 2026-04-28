@@ -1,7 +1,7 @@
 import { Button } from "@mantine/core"
 import { Header } from "./components/Header"
 import { Route, Routes } from "react-router"
-import { Catalog } from "./components/Catalog"
+import { Catalog } from "./components/catalog/Catalog"
 
 export function App() {
   return (
