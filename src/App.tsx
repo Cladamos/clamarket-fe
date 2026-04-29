@@ -2,6 +2,7 @@ import { Button } from "@mantine/core"
 import { Header } from "./components/Header"
 import { Route, Routes } from "react-router"
 import { Catalog } from "./components/catalog/Catalog"
+import { ProductDetail } from "./components/catalog/ProductDetail"
 
 export function App() {
   return (
@@ -17,6 +18,7 @@ export function App() {
           }
         />
         <Route path="/catalog" element={<Catalog />} />
+        <Route path="/catalog/:productId" element={<ProductDetail />} />
         <Route path="/collections" element={<p>Collections</p>} />
         <Route path="/about" element={<p>About</p>} />
       </Routes>

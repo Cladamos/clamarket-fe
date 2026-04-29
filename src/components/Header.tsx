@@ -72,7 +72,9 @@ export function Header({ children }: { children: React.ReactNode }) {
         </div>
       </AppShell.Navbar>
       <AppShell.Main>
-        <Container size="md">{children}</Container>
+        <Container size="md" pt="sm">
+          {children}
+        </Container>
       </AppShell.Main>
     </AppShell>
   )
