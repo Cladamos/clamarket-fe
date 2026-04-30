@@ -25,7 +25,7 @@ const headerButtons: HeaderButton[] = [
 
 export function Header({ children }: { children: React.ReactNode }) {
   const [opened, { toggle }] = useDisclosure()
-  let navigate = useNavigate()
+  const navigate = useNavigate()
   return (
     <AppShell
       padding="md"
@@ -40,7 +40,7 @@ export function Header({ children }: { children: React.ReactNode }) {
         <Container size="md">
           <div className="flex justify-between items-center">
             <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
-            <Text fw={700} size="lg" className="cursor-pointer" onClick={() => navigate("/")}>
+            <Text fw={700} size="lg" className="cursor-pointer md:w-40" onClick={() => navigate("/")}>
               Clamarket
             </Text>
             <div className="hidden sm:flex gap-4">
@@ -50,11 +50,11 @@ export function Header({ children }: { children: React.ReactNode }) {
                 </Button>
               ))}
             </div>
-            <div className="flex gap-4">
-              <ActionIcon size="lg" p={6} variant="subtle">
+            <div className="flex gap-4 md:w-40 justify-end">
+              <ActionIcon size="lg" p={6} variant="subtle" onClick={() => navigate("/cart")}>
                 <IconShoppingCartFilled />
               </ActionIcon>
-              <ActionIcon visibleFrom="sm" size="lg" p={6} variant="subtle">
+              <ActionIcon visibleFrom="sm" size="lg" p={6} variant="subtle" onClick={() => navigate("/sign-in")}>
                 <IconUserFilled />
               </ActionIcon>
             </div>

@@ -3,6 +3,8 @@ import { Header } from "./components/Header"
 import { Route, Routes } from "react-router"
 import { Catalog } from "./components/catalog/Catalog"
 import { ProductDetail } from "./components/catalog/ProductDetail"
+import { Cart } from "./components/Cart"
+import { Sign } from "./components/Sign"
 
 export function App() {
   return (
@@ -21,6 +23,8 @@ export function App() {
         <Route path="/catalog/:productId" element={<ProductDetail />} />
         <Route path="/collections" element={<p>Collections</p>} />
         <Route path="/about" element={<p>About</p>} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/sign-in" element={<Sign />} />
       </Routes>
     </Header>
   )

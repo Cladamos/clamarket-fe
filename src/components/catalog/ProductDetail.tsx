@@ -1,4 +1,4 @@
-import { Image } from "@mantine/core"
+import { Button, Image } from "@mantine/core"
 import { useQuery } from "@tanstack/react-query"
 import { useParams } from "react-router"
 import type { Product } from "./Catalog"
@@ -31,10 +31,14 @@ export function ProductDetail() {
       <Image radius="md" src="https://placehold.co/400x400/png" h={400} w={400} />
       <div className="flex flex-col gap-4">
         <div className="flex flex-col gap-1">
-          <p className="text-3xl font-semibold text-blue-300">{product.name}</p>
+          <p className="text-3xl font-semibold text-blue-200">{product.name}</p>
           <p className="text-xl text-blue-200">{product.price}$</p>
         </div>
         <p className="text-gray-500">{product.description}</p>
+
+        <div className="mt-auto flex">
+          <Button size="md">Add to Cart</Button>
+        </div>
       </div>
     </div>
   )
