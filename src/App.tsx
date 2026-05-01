@@ -4,7 +4,7 @@ import { Route, Routes } from "react-router"
 import { Catalog } from "./components/catalog/Catalog"
 import { ProductDetail } from "./components/catalog/ProductDetail"
 import { Cart } from "./components/Cart"
-import { Sign } from "./components/Sign"
+import { Sign } from "./components/sign/Sign"
 
 export function App() {
   return (
