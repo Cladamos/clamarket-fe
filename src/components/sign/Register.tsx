@@ -37,6 +37,10 @@ export function Register({ setActiveTab }: RegisterProps) {
       })
       return res.json()
     },
+    //TODO: handle errors
+    onSuccess: () => {
+      form.reset()
+    },
   })
 
   function handleSumbit(values: any) {
