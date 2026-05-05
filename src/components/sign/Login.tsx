@@ -1,5 +1,6 @@
 import { Button, Divider, PasswordInput, TextInput } from "@mantine/core"
 import { useForm } from "@mantine/form"
+import { notifications } from "@mantine/notifications"
 import { IconBrandGoogleFilled } from "@tabler/icons-react"
 import { useMutation } from "@tanstack/react-query"
 
@@ -29,11 +30,27 @@ export function Login({ setActiveTab }: LoginProps) {
         },
         body: JSON.stringify(values),
       })
-      return res.json()
+      const data = await res.json()
+      if (!res.ok) {
+        throw new Error("(" + res.status + ") " + res.statusText + ": " + data.error)
+      }
+      return data
     },
-    //TODO: handle errors
+    //TODO: Handle errors at http.tsx or something else instead of here
+    onError: (error) => {
+      notifications.show({
+        title: "Error",
+        message: error.message,
+        color: "red",
+      })
+    },
     onSuccess: () => {
       form.reset()
+      notifications.show({
+        title: "Success",
+        message: "Login successful",
+        color: "green",
+      })
     },
   })
 

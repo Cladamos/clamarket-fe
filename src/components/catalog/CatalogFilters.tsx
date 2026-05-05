@@ -34,12 +34,12 @@ export function CatalogFilters() {
   }
 
   return (
-    <div className="w-40 h-full">
-      <div className="flex flex-col gap-8">
+    <div className="md:px-0 px-4 w-full">
+      <div className="flex flex-col gap-4">
+        <p className="text-md font-semibold">Categories</p>
         <div className="flex flex-col gap-2">
-          <p className="text-md">Categories</p>
           {checkboxes.map((c) => (
-            <Checkbox size="xs" onChange={() => handleCheckboxChange(c.value)} checked={checkboxStates[c.value]} label={c.label} />
+            <Checkbox size="sm" onChange={() => handleCheckboxChange(c.value)} checked={checkboxStates[c.value]} label={c.label} />
           ))}
         </div>
         <div className="flex flex-col gap-2">
