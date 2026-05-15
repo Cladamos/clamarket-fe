@@ -5,6 +5,7 @@ import { Catalog } from "./components/catalog/Catalog"
 import { ProductDetail } from "./components/catalog/ProductDetail"
 import { Cart } from "./components/Cart"
 import { Sign } from "./components/sign/Sign"
+import { User } from "./components/User"
 
 export function App() {
   return (
@@ -25,6 +26,7 @@ export function App() {
         <Route path="/about" element={<p>About</p>} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/sign-in" element={<Sign />} />
+        <Route path="/user" element={<User />} />
       </Routes>
     </Header>
   )

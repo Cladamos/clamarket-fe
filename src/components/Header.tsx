@@ -54,7 +54,7 @@ export function Header({ children }: { children: React.ReactNode }) {
               <ActionIcon size="lg" p={6} variant="subtle" onClick={() => navigate("/cart")}>
                 <IconShoppingCartFilled />
               </ActionIcon>
-              <ActionIcon visibleFrom="sm" size="lg" p={6} variant="subtle" onClick={() => navigate("/sign-in")}>
+              <ActionIcon visibleFrom="sm" size="lg" p={6} variant="subtle" onClick={() => navigate("/user")}>
                 <IconUserFilled />
               </ActionIcon>
             </div>

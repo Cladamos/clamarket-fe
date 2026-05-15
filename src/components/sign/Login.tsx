@@ -3,12 +3,14 @@ import { useForm } from "@mantine/form"
 import { notifications } from "@mantine/notifications"
 import { IconBrandGoogleFilled } from "@tabler/icons-react"
 import { useMutation } from "@tanstack/react-query"
+import { useNavigate } from "react-router"
 
 type LoginProps = {
   setActiveTab: React.Dispatch<React.SetStateAction<string>>
 }
 
 export function Login({ setActiveTab }: LoginProps) {
+  const navigate = useNavigate()
   const form = useForm({
     initialValues: {
       email: "",
@@ -44,13 +46,15 @@ export function Login({ setActiveTab }: LoginProps) {
         color: "red",
       })
     },
-    onSuccess: () => {
+    onSuccess: (data) => {
       form.reset()
+      localStorage.setItem("access_token", data.token)
       notifications.show({
         title: "Success",
         message: "Login successful",
         color: "green",
       })
+      navigate("/catalog")
     },
   })
 
